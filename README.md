@@ -11,7 +11,7 @@ Aplicativo para calculo de macronutrientes
 <div id="#como-usar">
   <h3>Rodar aplicativo</h3>
   <p>
-  &emsp;Baixar o ionic atraves do Node.js (npm install -g ionic)
+  &emsp;Baixar o ionic atraves do Node.js (npm install cordova ionic)
 
   &emsp;Baixar a biblioteca IIFYM atraves do Node.js (npm install iifym.js)
 
