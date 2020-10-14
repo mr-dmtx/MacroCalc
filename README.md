@@ -6,8 +6,13 @@
 
 Aplicativo para calculo de macronutrientes
 
-Baixar o ionic atraves do Node.js (npm install -g ionic)
+<div id="#como-usar">
+  <h3>Rodar aplicativo</h3>
+  <p>
+  &emsp;Baixar o ionic atraves do Node.js (npm install -g ionic)
 
-Baixar a biblioteca IIFYM atraves do Node.js (npm install iifym.js)
+  &emsp;Baixar a biblioteca IIFYM atraves do Node.js (npm install iifym.js)
 
-Rodar aplicativo (ionic serve)
+  &emsp;Rodar aplicativo (ionic serve)
+  </p>
+</div>
