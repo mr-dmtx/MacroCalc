@@ -6,6 +6,8 @@
 
 Aplicativo para calculo de macronutrientes
 
+<h4>🚧 Em construção... 🚧</h4>
+
 <div id="#como-usar">
   <h3>Rodar aplicativo</h3>
   <p>
