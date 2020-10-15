@@ -1,5 +1,7 @@
 {
   "name": "MacroCalc",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

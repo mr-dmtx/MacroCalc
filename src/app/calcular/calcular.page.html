@@ -7,14 +7,23 @@
 </ion-header>
 <ion-content>
 	<ion-list>
+		
 		<ion-item>
-		    <ion-label>Genero</ion-label>
-		    <ion-select placeholder="Escolha um">
-		      <ion-select-option value="f">Feminino</ion-select-option>
-		      <ion-select-option value="m">Masculino</ion-select-option>
-		    </ion-select>
-	  	</ion-item>
-	  	<ion-item>
+			<ion-row class="ion-justify-content-center">
+      		<ion-col>
+			<ion-segment scrollable value="woman">
+			  <ion-segment-button value="man">
+			    <ion-icon name="man"></ion-icon>
+			  </ion-segment-button>
+			  <ion-segment-button value="woman">
+			    <ion-icon name="woman"></ion-icon>
+			  </ion-segment-button>
+			</ion-segment>
+			</ion-col>
+</ion-row>
+		</ion-item>
+	
+		<ion-item>
 	  		<ion-input placeholder="Informe sua idade" type="number" min="0" max="120"></ion-input>
 	  	</ion-item>
 	  	<ion-item>
@@ -37,8 +46,9 @@
 		      <ion-select-option value="9">Atleta</ion-select-option>
 		    </ion-select>
 	  	</ion-item>
-	  	<ion-button expand="block">
+	  	<ion-button expand="block" (click)="calcular()">
 	  		Realizar Calculo
 	  	</ion-button>
   </ion-list>
+
 </ion-content>
