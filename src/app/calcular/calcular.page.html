@@ -1,54 +1,54 @@
 <ion-header>
-  <ion-toolbar>
-     <ion-buttons slot="start">
-      <ion-back-button defaultHref="home"></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button defaultHref="home"></ion-back-button>
+		</ion-buttons>
+	</ion-toolbar>
 </ion-header>
 <ion-content>
 	<ion-list>
+		<ion-item>
+			<ion-label>Sexo</ion-label>
+			<ion-select>
+				<ion-select-option>Feminino</ion-select-option>
+				<ion-select-option>Masculino</ion-select-option>
+			</ion-select>
+		</ion-item>
 		
 		<ion-item>
-			<ion-row class="ion-justify-content-center">
-      		<ion-col>
-			<ion-segment scrollable value="woman">
-			  <ion-segment-button value="man">
-			    <ion-icon name="man"></ion-icon>
-			  </ion-segment-button>
-			  <ion-segment-button value="woman">
-			    <ion-icon name="woman"></ion-icon>
-			  </ion-segment-button>
-			</ion-segment>
-			</ion-col>
-</ion-row>
+			<ion-input placeholder="Informe sua idade" type="number" min="0" max="120"></ion-input>
 		</ion-item>
-	
 		<ion-item>
-	  		<ion-input placeholder="Informe sua idade" type="number" min="0" max="120"></ion-input>
-	  	</ion-item>
-	  	<ion-item>
-	  		<ion-input placeholder="Informe sua altura em cm" type="number" min="0" max="300"></ion-input>
-	  	</ion-item>
-	  	<ion-item>
-	  		<ion-input placeholder="Informe seu peso kg" type="number" min="0" max="500"></ion-input>
-	  	</ion-item>
-	  	<ion-item>
-		    <ion-label>Nivel de atividade fisica</ion-label>
-		    <ion-select placeholder="Escolha um">
-		      <ion-select-option value="1">Sedentario</ion-select-option>
-		      <ion-select-option value="2">1-3 vezes por semana</ion-select-option>
-		      <ion-select-option value="3">4 vezes por semana</ion-select-option>
-		      <ion-select-option value="4">5 vezes por semana</ion-select-option>
-		      <ion-select-option value="5">6 vezes por semana</ion-select-option>
-		      <ion-select-option value="6">Intenso - 5 vezes por semana</ion-select-option>
-		      <ion-select-option value="7"> Todos os dias</ion-select-option>
-		      <ion-select-option value="8">Intenso - Todos os dias</ion-select-option>
-		      <ion-select-option value="9">Atleta</ion-select-option>
-		    </ion-select>
-	  	</ion-item>
-	  	<ion-button expand="block" (click)="calcular()">
-	  		Realizar Calculo
-	  	</ion-button>
-  </ion-list>
+			<ion-input placeholder="Informe sua altura em cm" type="number" min="0" max="300"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-input placeholder="Informe seu peso kg" type="number" min="0" max="500"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label>Nivel de atividade fisica</ion-label>
+			<ion-select placeholder="Escolha um">
+				<ion-select-option value="1">Sedentario</ion-select-option>
+				<ion-select-option value="2">1-3 vezes por semana</ion-select-option>
+				<ion-select-option value="3">4 vezes por semana</ion-select-option>
+				<ion-select-option value="4">5 vezes por semana</ion-select-option>
+				<ion-select-option value="5">6 vezes por semana</ion-select-option>
+				<ion-select-option value="6">Intenso - 5 vezes por semana</ion-select-option>
+				<ion-select-option value="7"> Todos os dias</ion-select-option>
+				<ion-select-option value="8">Intenso - Todos os dias</ion-select-option>
+				<ion-select-option value="9">Atleta</ion-select-option>
+			</ion-select>
+		</ion-item>
+		<ion-item>
+			<ion-label>Objetivo</ion-label>
+			<ion-select placeholder="Escolha seu objetivo">
+				<ion-select-option value="1">Manter peso</ion-select-option>
+				<ion-select-option value="2">Perder peso</ion-select-option>
+				<ion-select-option value="3">Ganhar peso</ion-select-option>
+			</ion-select>
+		</ion-item>
+		<ion-button expand="block" (click)="calcular()">
+			Realizar Calculo
+		</ion-button>
+	</ion-list>
 
 </ion-content>
