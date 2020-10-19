@@ -40,7 +40,7 @@
               }
             ],
             "scripts": [
-              { "iifym": "node_modules/iifym.js/iifym.js" }
+              
             ]
           },
           "configurations": {
