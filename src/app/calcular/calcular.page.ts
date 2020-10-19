@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { FormBuilder, FormGroup } from '@angular/forms';
+
 //import * as iifym from 'iifym.js';
 import * as iifym from 'iifym.js';
 
@@ -10,23 +12,37 @@ import * as iifym from 'iifym.js';
 })
 export class CalcularPage implements OnInit {
 
-  constructor(public alertController : AlertController) { }
+  bmrForm: FormGroup;
+
+  constructor(public alertController : AlertController, public fb : FormBuilder) { }
 
   ngOnInit() {
+    this.bmrForm = this.fb.group({
+      genero: [''],
+      age: [''],
+      cm: [''],
+      kg: [''],
+      exerciseLeve: [''],
+      goal: ['']
+    })
   }
 
   calcular(){
-  	let t: string = iifym.tdeeGoal( 2408, 1.05);
-    console.log(t);
-  	this.alertController.create({
-			header: 'Resultado',
-			message: t,
-			buttons: ['Salvar', 'Fechar']
-		}).then(res => {
+    if(!this.bmrForm.valid){
+      return false;
+    }
+    else{
+      console.log(this.bmrForm.value);
+      this.alertController.create({
+        header: 'Resultado',
+        message: 'xzz',
+        buttons: ['Salvar', 'Fechar']
+      }).then(res => {
 
-			res.present();
+        res.present();
 
-		});
+      }); 
+    }
 
 
   }
