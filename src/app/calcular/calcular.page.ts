@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
-
-//import { iifym } from 'iifym.js';
+//import * as iifym from 'iifym.js';
+import * as iifym from 'iifym.js';
 
 @Component({
   selector: 'app-calcular',
@@ -16,10 +16,11 @@ export class CalcularPage implements OnInit {
   }
 
   calcular(){
-  	//let tdg: any = tdeeGoal ( 2408 ,  1,05 );
+  	let t: string = iifym.tdeeGoal( 2408, 1.05);
+    console.log(t);
   	this.alertController.create({
 			header: 'Resultado',
-			message: 'asdasdad',
+			message: t,
 			buttons: ['Salvar', 'Fechar']
 		}).then(res => {
 
