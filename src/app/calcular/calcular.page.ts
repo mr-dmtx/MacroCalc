@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
-import { FormBuilder, FormGroup } from '@angular/forms';
-
+//import { FormBuilder, Validators } from '@angular/forms'; 
 //import * as iifym from 'iifym.js';
 import * as iifym from 'iifym.js';
 
@@ -9,41 +8,37 @@ import * as iifym from 'iifym.js';
   selector: 'app-calcular',
   templateUrl: './calcular.page.html',
   styleUrls: ['./calcular.page.scss'],
+
 })
-export class CalcularPage implements OnInit {
 
-  bmrForm: FormGroup;
+export class CalcularPage{
 
-  constructor(public alertController : AlertController, public fb : FormBuilder) { }
+  public calcularForm: any;
 
-  ngOnInit() {
-    this.bmrForm = this.fb.group({
-      genero: [''],
-      age: [''],
-      cm: [''],
-      kg: [''],
-      exerciseLeve: [''],
-      goal: ['']
-    })
+  constructor(public alertController : AlertController, formBuilder: FormBuilder) {
+    this.calcularForm = formBuilder.group({
+     gender: [''],
+     age: [''],
+     cm: [''],
+     kg: [''],
+     exercise: [''],
+     goal: ['']
+     }); 
+
   }
 
   calcular(){
-    if(!this.bmrForm.valid){
-      return false;
-    }
-    else{
-      console.log(this.bmrForm.value);
+      let { gender, age, cm, kg, exercise, goal} = this.calcularForm.controls;
+      console.log(gender);
       this.alertController.create({
-        header: 'Resultado',
-        message: 'xzz',
+        header: 'Resultado!',
+        message: 'asd',
         buttons: ['Salvar', 'Fechar']
       }).then(res => {
 
         res.present();
 
       }); 
-    }
-
 
   }
 
