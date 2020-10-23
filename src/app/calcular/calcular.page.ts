@@ -11,28 +11,71 @@ import * as iifym from 'iifym.js';
 
 })
 
-export class CalcularPage{
+export class CalcularPage implements OnInit{
 
-  public calcularForm: any;
+  //public calcularForm: any;
+  bmr: any = {
+    gender: null,
+    age: null,
+    cm: null,
+    kg: null,
+    exlevel: null,
+    goal: null
+  };
 
-  constructor(public alertController : AlertController, formBuilder: FormBuilder) {
-    this.calcularForm = formBuilder.group({
-     gender: [''],
-     age: [''],
-     cm: [''],
-     kg: [''],
-     exercise: [''],
-     goal: ['']
-     }); 
+  constructor(public alertController : AlertController) { }
 
-  }
+  calcular(form){
 
-  calcular(){
-      let { gender, age, cm, kg, exercise, goal} = this.calcularForm.controls;
-      console.log(gender);
+    var protein: any = 0;
+    var fat: any = 0;
+    var goal: any = 0;
+    if(goal == 1){
+      var goal = 1;
+      var protein = 0.8;
+      var fat = 0.35;
+    }
+    else if(goal == 2){
+      var goal = 0.85;
+      var protein = 0.7;
+      var fat = 0.3; 
+    }
+    else{
+      var goal = 1.05;
+      var protein = 0.9;
+      var fat = 0.4;
+    }
+
+    var dados: any = {
+      'gender': this.bmr.gender,
+      'age': this.bmr.age,
+      'isMetric': true,
+      'ft': null,
+      'in': null,
+      'cm': this.bmr.cm,
+      'lbs': null,
+      'kg': this.bmr.kg,
+      'mifflinStJeor': true,
+      'bodyFatPercentage': null,
+      'exerciseLevel': this.bmr.exlevel,
+      'goal': goal,
+      'protein': protein,
+      'fat' : fat
+    };
+    console.log(iifym.calculate(dados));
+
+    var result: any = iifym.calculate(dados);
+
+    var relatorio: string = "Taxa Metabolica Basal: " + result.bmr + "\n"
+                          + "Gasto de calorias (atual): " + result.initialTdee + "\n"
+                          + "Meta de calorias: " + result.tdee + "\n"
+                          + "Consumo de proteinas: " + result.protein + "\n"
+                          + "Consumo de gorduras: " + result.fat + "\n"
+                          + "Consumo de carboidratos: " + result.carbs;
+
       this.alertController.create({
         header: 'Resultado!',
-        message: 'asd',
+        message: relatorio,
         buttons: ['Salvar', 'Fechar']
       }).then(res => {
 
