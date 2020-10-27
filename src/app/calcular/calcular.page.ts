@@ -11,7 +11,7 @@ import * as iifym from 'iifym.js';
 
 })
 
-export class CalcularPage implements OnInit{
+export class CalcularPage{
 
   //public calcularForm: any;
   bmr: any = {
@@ -27,9 +27,11 @@ export class CalcularPage implements OnInit{
 
   calcular(form){
 
-    var protein: any = 0;
-    var fat: any = 0;
-    var goal: any = 0;
+    var protein: number = 0;
+    var fat: number = 0;
+    var goal: number = 0;
+
+
     if(goal == 1){
       var goal = 1;
       var protein = 0.8;
