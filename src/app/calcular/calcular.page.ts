@@ -29,7 +29,8 @@ export class CalcularPage{
 
     var protein: number = 0;
     var fat: number = 0;
-    var goal: number = 0;
+    var goal: number = this.bmr.goal;
+
     if(goal == 1){
       var goal = 1;
       var protein = 0.8;
@@ -62,16 +63,17 @@ export class CalcularPage{
       'protein': protein,
       'fat' : fat
     };
+    console.log(dados);
     console.log(iifym.calculate(dados));
 
     var result: any = iifym.calculate(dados);
 
     var relatorio: string = "Taxa Metabolica Basal: " + result.bmr + "\n"
                           + "Gasto de calorias (atual): " + result.initialTdee + "\n"
-                          + "Meta de calorias: " + result.tdee + "\n"
-                          + "Consumo de proteinas: " + result.protein + "\n"
-                          + "Consumo de gorduras: " + result.fat + "\n"
-                          + "Consumo de carboidratos: " + result.carbs;
+                          + "Você deve consumir: " + result.tdee + "\n"
+                          + "Consumo de proteina: " + result.protein + "g\n"
+                          + "Consumo de gordura: " + result.fat + "g\n"
+                          + "Consumo de carboidrato: " + result.carbs + "g";
 
       this.alertController.create({
         header: 'Resultado!',
