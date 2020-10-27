@@ -3,6 +3,7 @@ import { AlertController } from '@ionic/angular';
 //import { FormBuilder, Validators } from '@angular/forms'; 
 //import * as iifym from 'iifym.js';
 import * as iifym from 'iifym.js';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-calcular',
@@ -23,7 +24,7 @@ export class CalcularPage{
     goal: null
   };
 
-  constructor(public alertController : AlertController) { }
+  constructor(public alertController : AlertController, private storage : Storage) { }
 
   calcular(form){
 
@@ -68,22 +69,39 @@ export class CalcularPage{
 
     var result: any = iifym.calculate(dados);
 
-    var relatorio: string = "Taxa Metabolica Basal: " + result.bmr + "\n"
-                          + "Gasto de calorias (atual): " + result.initialTdee + "\n"
-                          + "Você deve consumir: " + result.tdee + "\n"
-                          + "Consumo de proteina: " + result.protein + "g\n"
-                          + "Consumo de gordura: " + result.fat + "g\n"
-                          + "Consumo de carboidrato: " + result.carbs + "g";
+    var relatorio: string = "Taxa Metabolica Basal: " + result.bmr + "<br>"
+                          + "Gasto de calorias (atual): " + result.initialTdee + "<br>"
+                          + "Meta de calorias: " + result.tdee + "<br>"
+                          + "Você deve consumir: <br><b>"
+                          + "Carboidratos: " + result.carbs + "g por dia<br>"
+                          + "Proteinas: " + result.protein + "g por dia<br>"
+                          + "Gorduras: " + result.fat + "g por dia</b>";
 
       this.alertController.create({
         header: 'Resultado!',
         message: relatorio,
-        buttons: ['Salvar', 'Fechar']
+        buttons: [{
+            text: 'Salvar Resultado',
+            role: 'Salvar',
+            cssClass: 'secondary',
+            handler: () => {
+              console.log('Salvar Resultado');
+              salvarResultado(relatorio);
+            }
+          }, {
+            text: 'Fechar'
+          }]
       }).then(res => {
 
         res.present();
 
       }); 
+
+  }
+
+  salvarResultado(resultado){
+
+    console.log(resultado);
 
   }
 

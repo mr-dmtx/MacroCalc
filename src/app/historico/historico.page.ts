@@ -21,7 +21,20 @@ export class HistoricoPage implements OnInit{
 			header: 'Alert',
 			subHeader: 'Subtitle for alert',
 			message: 'This is an alert message.',
-			buttons: ['OK']
+			buttons: [{
+	          text: 'Cancel',
+	          role: 'cancel',
+	          cssClass: 'secondary',
+	          handler: () => {
+	            console.log('Confirm Cancel');
+	          }
+	        }, {
+	          text: 'Ok',
+	          handler: () => {
+	            console.log('Confirm Ok');
+	          }
+	        }
+	]
 		}).then(res => {
 
 			res.present();
