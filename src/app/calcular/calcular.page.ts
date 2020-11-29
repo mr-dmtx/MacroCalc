@@ -3,7 +3,7 @@ import { AlertController } from '@ionic/angular';
 //import { FormBuilder, Validators } from '@angular/forms'; 
 //import * as iifym from 'iifym.js';
 import * as iifym from 'iifym.js';
-import { Storage } from '@ionic/storage';
+//import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'app-calcular',
@@ -14,7 +14,6 @@ import { Storage } from '@ionic/storage';
 
 export class CalcularPage{
 
-  //public calcularForm: any;
   bmr: any = {
     gender: null,
     age: null,
@@ -24,7 +23,8 @@ export class CalcularPage{
     goal: null
   };
 
-  constructor(public alertController : AlertController, private storage : Storage) { }
+  rep: string = "";
+  constructor(public alertController : AlertController) { }
 
   calcular(form){
 
@@ -77,18 +77,12 @@ export class CalcularPage{
                           + "Proteinas: " + result.protein + "g por dia<br>"
                           + "Gorduras: " + result.fat + "g por dia</b>";
 
+    this.rep = relatorio;
+
       this.alertController.create({
         header: 'Resultado!',
         message: relatorio,
         buttons: [{
-            text: 'Salvar Resultado',
-            role: 'Salvar',
-            cssClass: 'secondary',
-            handler: () => {
-              console.log('Salvar Resultado');
-              salvarResultado(relatorio);
-            }
-          }, {
             text: 'Fechar'
           }]
       }).then(res => {
@@ -99,10 +93,5 @@ export class CalcularPage{
 
   }
 
-  salvarResultado(resultado){
-
-    console.log(resultado);
-
-  }
 
 }

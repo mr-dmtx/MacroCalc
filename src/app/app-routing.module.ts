@@ -16,8 +16,8 @@ const routes: Routes = [
     loadChildren: () => import('./calcular/calcular.module').then( m => m.CalcularPageModule)
   },
   {
-    path: 'historico',
-    loadChildren: () => import('./historico/historico.module').then( m => m.HistoricoPageModule)
+    path: 'dicas-alimentos',
+    loadChildren: () => import('./dicas-alimentos/dicas-alimentos.module').then( m => m.DicasAlimentosPageModule)
   },
 ];
 

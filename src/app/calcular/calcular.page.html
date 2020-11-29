@@ -3,6 +3,7 @@
 		<ion-buttons slot="start">
 			<ion-back-button defaultHref="home"></ion-back-button>
 		</ion-buttons>
+		<ion-title>Calcular os Macros</ion-title>
 	</ion-toolbar>
 </ion-header>
 <ion-content>
@@ -17,7 +18,7 @@
 			</ion-item>
 
 			<ion-item>
-				<ion-input name="age" [(ngModel)]="bmr.age" required placeholder="Informe sua idade" type="number" min="0" max="120"></ion-input>
+				<ion-input name="age"[(ngModel)]="bmr.age" required placeholder="Informe sua idade" type="number" min="0" max="120"></ion-input>
 			</ion-item>
 			<ion-item>
 				<ion-input name="cm" [(ngModel)]="bmr.cm" required placeholder="Informe sua altura em cm" type="number" min="0" max="300"></ion-input>

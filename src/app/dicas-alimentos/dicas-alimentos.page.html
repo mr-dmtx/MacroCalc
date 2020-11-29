@@ -1,0 +1,20 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-back-button defaultHref="home"></ion-back-button>
+		</ion-buttons>
+		<ion-title>Dicas de alimentos</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card *ngFor="let a of alimentos">
+  <ion-card-header>
+    <ion-label><b>{{a.name}} {{a.qt}}</b></ion-label>
+  </ion-card-header>
+  <ion-card-content>
+    Calorias: {{a.calories}}kcal | Carboidratos: {{a.carbs}} | Proteinas: {{a.protein}} | Gorduras: {{a.fat}}
+  </ion-card-content>
+</ion-card>
+<p class="ion-text-center">Fonte: <a href="https://www.fatsecret.com.br/calorias-nutri%C3%A7%C3%A3o/">Fatsecret</a></p>
+</ion-content>
