@@ -6,7 +6,7 @@
 
 Aplicativo para calculo de macronutrientes
 
-<h4>🚧 Em construção... 🚧</h4>
+<h4>🚀 <a href="https://drive.google.com/file/d/1kW7lHa4yyNENqithwMwBhN9hctEcw7Ut/view?usp=sharing"> Baixar App </a> 🚀</h4>
 
 <div id="#como-usar">
   <h3>Rodar aplicativo</h3>
